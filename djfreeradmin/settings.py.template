@@ -1,0 +1,22 @@
+from settings_global import *
+
+SECRET_KEY = ''
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'radius',
+        'USER': 'radius',
+        'PASSWORD': 'radpass',
+        'HOST': '',
+        'PORT': '',
+    }
+}
+
+PUBLIC_ROOT = '/var/www/'
+
+MEDIA_ROOT = os.path.join(PUBLIC_ROOT, PROJECT_NAME, 'media')
+STATIC_ROOT = os.path.join(PUBLIC_ROOT, PROJECT_NAME, 'static')
+
+# the default password to use in the field password of the table `radcheck`, upon an INSERT
+FREERADMIN_RADCHECK_DEFAULT_PASSWORD = 'radpass'
