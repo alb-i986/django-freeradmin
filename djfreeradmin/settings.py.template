@@ -13,10 +13,7 @@ DATABASES = {
     }
 }
 
-PUBLIC_ROOT = '/var/www/'
+PUBLIC_ROOT = os.path.join('/var/www/', PROJECT_NAME)
 
-MEDIA_ROOT = os.path.join(PUBLIC_ROOT, PROJECT_NAME, 'media')
-STATIC_ROOT = os.path.join(PUBLIC_ROOT, PROJECT_NAME, 'static')
-
-# the default password to use in the field password of the table `radcheck`, upon an INSERT
-FREERADMIN_RADCHECK_DEFAULT_PASSWORD = 'radpass'
+MEDIA_ROOT = os.path.join(PUBLIC_ROOT, 'media')
+STATIC_ROOT = os.path.join(PUBLIC_ROOT, 'static')

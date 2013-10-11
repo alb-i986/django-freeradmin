@@ -1,45 +1,52 @@
 from django.contrib import admin
 
-from freeradmin.models import Radcheck, Radreply, Vlan
+from freeradmin.models import Raduser, Radcheck, Radreply, Radgroup, Vlan
+
 
 # INLINEs
 
-class RadcheckInline(admin.TabularInline):
-  model = Radcheck
-  fields = ('username', )
-  readonly_fields = ('op', 'attribute', 'value' )
+class RaduserInline(admin.TabularInline):
+  model = Raduser
+  # fields = ('username', )
 
-class RadreplyInline(admin.TabularInline):
-  model = Radreply
-  fields = ('attribute', 'op', 'value' )
+
 
 
 # MODELADMINs
 
-class RadcheckAdmin(admin.ModelAdmin):
-  fields = ('username', 'vlan', 'replies')
-  filter_horizontal = [ 'replies' ]
+class VlanAdmin(admin.ModelAdmin):
+  list_display = ('name', 'description', )
+  #inlines = [ RaduserInline, ]
+  search_fields = [ 'name', ]
+
+class RaduserAdmin(admin.ModelAdmin):
+  fields = ('username', 'vlan', 'radchecks', 'radreplies', 'radgroups' )
+  filter_horizontal = [ 'radchecks', 'radreplies' ]
   list_display = ('username', 'vlan', )
   list_filter = ('vlan',)
-  readonly_fields = ('op', 'attribute', 'value' )
   search_fields = [ 'username', ]
 
+class RadgroupAdmin(admin.ModelAdmin):
+  # fields = ('name', 'vlan', 'radchecks', 'radreplies', 'radgroups' )
+  list_display = ('groupname', 'priority', )
+  filter_horizontal = [ 'radchecks', 'radreplies' ]
+  search_fields = [ 'groupname', ]
+
+class RadcheckAdmin(admin.ModelAdmin):
+  list_display = ('attribute', 'op', 'value')
+  list_filter = ('attribute', )
+  search_fields = [ 'attribute', 'value' ]
+
 class RadreplyAdmin(admin.ModelAdmin):
-  fields = ('attribute', 'op', 'value')
   list_display = ('attribute', 'op', 'value')
   list_filter = ('attribute', )
   search_fields = [ 'attribute', 'value' ]
 
 
 
-class VlanAdmin(admin.ModelAdmin):
-  list_display = ('name', 'description', )
-  inlines = [ RadcheckInline, ]
-  search_fields = [ 'name', ]
-
-
-
-
-admin.site.register(Radcheck, RadcheckAdmin)
+admin.site.register(Raduser, RaduserAdmin)
+admin.site.register(Radgroup, RadgroupAdmin)
 admin.site.register(Vlan, VlanAdmin)
+admin.site.register(Radcheck, RadcheckAdmin)
 admin.site.register(Radreply, RadreplyAdmin)
+

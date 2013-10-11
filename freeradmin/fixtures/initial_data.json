@@ -1,6 +1,107 @@
 [
-{"pk": 1, "model": "freeradmin.vlan", "fields": {"name": "vlan1", "description": ""}}, {"pk": 2, "model": "freeradmin.vlan", "fields": {"name": "vlan2", "description": ""}}, {"pk": 3, "model": "freeradmin.vlan", "fields": {"name": "vlan3", "description": ""}},
-{"pk": 4, "model": "freeradmin.radcheck", "fields": {"username": "001558A10387", "attribute": "Cleartext-Password", "vlan": 2, "value": "\"radpass\"", "op": ":="}}, {"pk": 5, "model": "freeradmin.radcheck", "fields": {"username": "0015586B3B58", "attribute": "Cleartext-Password", "vlan": 2, "value": "\"radpass\"", "op": ":="}}, {"pk": 6, "model": "freeradmin.radcheck", "fields": {"username": "001B783DFCEF", "attribute": "Cleartext-Password", "vlan": 2, "value": "\"radpass\"", "op": ":="}}, {"pk": 7, "model": "freeradmin.radcheck", "fields": {"username": "001558A1025C", "attribute": "Cleartext-Password", "vlan": 2, "value": "\"radpass\"", "op": ":="}}, {"pk": 8, "model": "freeradmin.radcheck", "fields": {"username": "001B783E132E", "attribute": "Cleartext-Password", "vlan": 3, "value": "\"radpass\"", "op": ":="}}, {"pk": 9, "model": "freeradmin.radcheck", "fields": {"username": "001558A10223", "attribute": "Cleartext-Password", "vlan": 2, "value": "\"radpass\"", "op": ":="}}, 
-{"pk": 1, "model": "freeradmin.radreply", "fields": {"attribute": "Extreme-Netlogin-Only", "value": "0", "op": "="}}, {"pk": 2, "model": "freeradmin.radreply", "fields": {"attribute": "Extreme-Netlogin-Only", "value": "1", "op": "="}}
-
+{
+  "pk": 1, 
+  "model": "freeradmin.raduser", 
+  "fields": {
+    "username": "DEFAULT", 
+    "radreplies": [], 
+    "vlan": 1, 
+    "radgroups": [
+      1
+    ], 
+    "radchecks": []
+  }
+},
+{
+  "pk": 1, 
+  "model": "freeradmin.vlan", 
+  "fields": {
+    "name": "vlan1", 
+    "description": ""
+  }
+},
+{
+  "pk": 2, 
+  "model": "freeradmin.vlan", 
+  "fields": {
+    "name": "vlan2", 
+    "description": ""
+  }
+},
+{
+  "pk": 3, 
+  "model": "freeradmin.vlan", 
+  "fields": {
+    "name": "vlan3", 
+    "description": ""
+  }
+},
+{
+  "pk": 1, 
+  "model": "freeradmin.radcheck", 
+  "fields": {
+    "attribute": "Cleartext-Password", 
+    "value": "\"radpass\"", 
+    "op": ":="
+  }
+},
+{
+  "pk": 1, 
+  "model": "freeradmin.radreply", 
+  "fields": {
+    "attribute": "Extreme-Netlogin-Only", 
+    "value": "0", 
+    "op": "="
+  }
+},
+{
+  "pk": 2, 
+  "model": "freeradmin.radreply", 
+  "fields": {
+    "attribute": "Extreme-Netlogin-Only", 
+    "value": "1", 
+    "op": "="
+  }
+},
+{
+  "pk": 3, 
+  "model": "freeradmin.radreply", 
+  "fields": {
+    "attribute": "Service-Type", 
+    "value": "Administrative-User", 
+    "op": "="
+  }
+},
+{
+  "pk": 4, 
+  "model": "freeradmin.radreply", 
+  "fields": {
+    "attribute": "Extreme-CLI-Authorization", 
+    "value": "1", 
+    "op": "="
+  }
+},
+{
+  "pk": 5, 
+  "model": "freeradmin.radreply", 
+  "fields": {
+    "attribute": "Extreme-CLI-Authorization", 
+    "value": "0", 
+    "op": "="
+  }
+},
+{
+  "pk": 1, 
+  "model": "freeradmin.radgroup", 
+  "fields": {
+    "priority": 1, 
+    "groupname": "defaultgroup", 
+    "radreplies": [
+      1
+    ], 
+    "radchecks": [
+      1
+    ]
+  }
+}
 ]
