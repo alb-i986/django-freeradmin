@@ -5,35 +5,11 @@
   "fields": {
     "username": "DEFAULT", 
     "radreplies": [], 
-    "vlan": 1, 
     "radgroups": [
       1
     ], 
-    "radchecks": []
-  }
-},
-{
-  "pk": 1, 
-  "model": "freeradmin.vlan", 
-  "fields": {
-    "name": "vlan1", 
-    "description": ""
-  }
-},
-{
-  "pk": 2, 
-  "model": "freeradmin.vlan", 
-  "fields": {
-    "name": "vlan2", 
-    "description": ""
-  }
-},
-{
-  "pk": 3, 
-  "model": "freeradmin.vlan", 
-  "fields": {
-    "name": "vlan3", 
-    "description": ""
+    "radchecks": [],
+    "vlan": null
   }
 },
 {
@@ -91,17 +67,80 @@
   }
 },
 {
+  "pk": 6, 
+  "model": "freeradmin.radreply", 
+  "fields": {
+    "attribute": "Extreme-Netlogin-Vlan", 
+    "value": "vlan1", 
+    "op": "="
+  }
+},
+{
   "pk": 1, 
   "model": "freeradmin.radgroup", 
   "fields": {
     "priority": 1, 
     "groupname": "defaultgroup", 
     "radreplies": [
-      1
+      2
     ], 
     "radchecks": [
       1
     ]
   }
+},
+
+
+
+{
+  "pk": 1, 
+  "model": "auth.group", 
+  "fields": {
+    "name": "MAC admin", 
+    "permissions": [
+      22, 
+      23, 
+      24
+    ]
+  }
+},
+{
+  "pk": 1, 
+  "model": "auth.user", 
+  "fields": {
+    "username": "admin", 
+    "first_name": "", 
+    "last_name": "", 
+    "is_active": true, 
+    "is_superuser": true, 
+    "is_staff": true, 
+    "last_login": "2013-10-24T00:17:53Z", 
+    "groups": [], 
+    "user_permissions": [], 
+    "password": "pbkdf2_sha256$10000$9qvFIl11IxrR$8UId66nLsn6IglehujDc4s//67uCF1jPksXm1MmKzDI=", 
+    "email": "", 
+    "date_joined": "2013-10-24T00:17:34Z"
+  }
+},
+{
+  "pk": 2, 
+  "model": "auth.user", 
+  "fields": {
+    "username": "mac_admin", 
+    "first_name": "", 
+    "last_name": "", 
+    "is_active": true, 
+    "is_superuser": false, 
+    "is_staff": true, 
+    "last_login": "2013-10-24T00:20:31Z", 
+    "groups": [
+      1
+    ], 
+    "user_permissions": [], 
+    "password": "pbkdf2_sha256$10000$N6Tz0SrGLevs$EDTtFN1Jytb0FT5vmQPopOkzJDS1y9g3HSqc0SKheRg=", 
+    "email": "", 
+    "date_joined": "2013-10-24T00:20:31Z"
+  }
 }
+
 ]

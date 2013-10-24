@@ -3,9 +3,6 @@
 import os
 
 
-PROJECT_ROOT = os.path.abspath( os.path.join(__file__, '..', '..') )
-PROJECT_NAME = os.path.basename( PROJECT_ROOT )
-
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
