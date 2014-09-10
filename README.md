@@ -37,7 +37,7 @@ Same old stuff for setting up any other Django project:
 1. Clone/download this repo (it's a full Django project, btw)
 2. Copy settings.py.template to settings.py (unversioned) and customize your settings
 2.1. Configure DB settings: make sure Django connects to the very DB Freeradius is querying
-3. `pip install -r .REQ`
+3. `pip install -r requirements.txt`
 4. `./manage.py syncdb` (which installs a fixture and custom SQL scripts)
 5. `./manage.py runserver`
 6. open your browser and go to http://127.0.0.1:8000/
