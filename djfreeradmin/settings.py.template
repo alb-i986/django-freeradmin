@@ -16,8 +16,8 @@ DATABASES = {
 PROJECT_ROOT = os.path.abspath( os.path.join(__file__, '..', '..') )
 PROJECT_NAME = os.path.basename( PROJECT_ROOT )
 
+SOURCE_ROOT = os.path.join(PROJECT_ROOT, 'src')
 PUBLIC_ROOT = os.path.join('/var/www/', PROJECT_NAME)
-
 MEDIA_ROOT = os.path.join(PUBLIC_ROOT, 'media')
 STATIC_ROOT = os.path.join(PUBLIC_ROOT, 'static')
 
