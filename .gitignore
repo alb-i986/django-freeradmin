@@ -2,3 +2,9 @@
 *.pot
 *.pyc
 settings.py
+
+# vagrant & librarian-chef stuff
+/.vagrant/
+/tmp
+/cookbooks
+

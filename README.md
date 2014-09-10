@@ -27,23 +27,32 @@ Features: operations
 
 
 
-User guide
-----------
+Setup
+-----
 
-### Setup
+First of all, you need to copy settings.py.template to settings.py (which is unversioned) and customize it with your own settings.
+In the DB settings, please make sure to configure the very DB Freeradius is querying.
 
-Same old stuff for setting up any other Django project:
+### Vagrant way
+See also https://github.com/alb-i986/vagrantfiles
 
-1. Clone/download this repo (it's a full Django project, btw)
-2. Copy settings.py.template to settings.py (unversioned) and customize your settings
-2.1. Configure DB settings: make sure Django connects to the very DB Freeradius is querying
-3. `pip install -r requirements.txt`
-4. `./manage.py syncdb` (which installs a fixture and custom SQL scripts)
-5. `./manage.py runserver`
-6. open your browser and go to http://127.0.0.1:8000/
-7. Login as 'admin', password 'admin'
+Drawback: it has [a few requirements](https://github.com/alb-i986/vagrantfiles#requirements).
 
-The fixture at step 4 installs:
+Once you have them all:
+
+1. run `vagrant up`
+2. open your browser and go to http://localhost:8000/
+3. Login as 'admin', password 'admin'
+
+### Manual way
+
+1. `pip install -r requirements.txt`
+2. `./manage.py syncdb` (which installs a fixture and custom SQL scripts)
+3. `./manage.py runserver`
+4. open your browser and go to http://localhost:8000/
+5. Login as 'admin', password 'admin'
+
+The fixture at step 2 installs:
 - a super user 'admin', whose password is 'admin'
 - a group 'MAC Admin', granted with privileges to CRUD MAC addresses
 - a user 'mac_admin', whose password is 'admin', belonging to the group 'MAC Admin'
