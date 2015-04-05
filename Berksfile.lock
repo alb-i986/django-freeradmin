@@ -1,0 +1,44 @@
+DEPENDENCIES
+  apt
+  git
+  htop
+  mysql
+  python
+
+GRAPH
+  apt (2.7.0)
+  build-essential (2.2.2)
+  chef_handler (1.1.6)
+  dmg (2.2.2)
+  git (4.1.0)
+    build-essential (>= 0.0.0)
+    dmg (>= 0.0.0)
+    runit (>= 1.0)
+    windows (>= 0.0.0)
+    yum (~> 3.0)
+    yum-epel (>= 0.0.0)
+  htop (2.0.0)
+    yum-repoforge (>= 0.0.0)
+  mysql (6.0.20)
+    smf (>= 0.0.0)
+    yum-mysql-community (>= 0.0.0)
+  python (1.4.6)
+    build-essential (>= 0.0.0)
+    yum-epel (>= 0.0.0)
+  rbac (1.0.3)
+  runit (1.5.18)
+    build-essential (>= 0.0.0)
+    yum (~> 3.0)
+    yum-epel (>= 0.0.0)
+  smf (2.2.6)
+    rbac (>= 1.0.1)
+  windows (1.36.6)
+    chef_handler (>= 0.0.0)
+  yum (3.5.3)
+  yum-epel (0.6.0)
+    yum (~> 3.0)
+  yum-mysql-community (0.1.16)
+    yum (>= 3.0)
+  yum-repoforge (0.5.0)
+    yum (~> 3.0)
+    yum-epel (>= 0.0.0)

@@ -38,6 +38,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # some recipes and/or roles.
   #
   config.omnibus.chef_version = :latest
+  
+  if Vagrant.has_plugin?("vagrant-berkshelf")
+    config.berkshelf.enabled = true
+  end
 
   config.vm.provision "chef_solo" do |chef|
     #chef.cookbooks_path = "cookbooks"
