@@ -40,3 +40,12 @@ cp djfreeradmin/settings.py.template djfreeradmin/settings.py
 sed -i "s/^\(SECRET_KEY\).*$/\1 = '$( pwgen --secure 51 1 )'/" djfreeradmin/settings.py
 python manage.py syncdb --noinput
 python manage.py runserver 0.0.0.0:8000 &
+
+
+echo
+echo
+echo "$PROJECT_NAME has been installed."
+echo "Now you may go to http://localhost:8000, and login as admin/admin"
+echo
+
+exit 0
