@@ -30,9 +30,6 @@ Features: operations
 Setup
 -----
 
-First of all, you need to copy settings.py.template to settings.py (which is unversioned) and customize it with your own settings.
-In the DB settings, please make sure to configure the very DB Freeradius is querying.
-
 ### Vagrant way
 See also https://github.com/alb-i986/vagrantfiles
 
@@ -46,11 +43,18 @@ Once you have them all:
 
 ### Manual way
 
+First of all, you need to configure Django by copying `djfreeradmin/settings.py.template` to `djfreeradmin/settings.py` (which is unversioned),
+and by customizing it with your own values.
+In the DB settings, please make sure to configure the same DB that Freeradius is querying.
+Also, you need to fill in the [SECRET_KEY](https://docs.djangoproject.com/en/1.5/ref/settings/#secret-key).
+
 1. `pip install -r requirements.txt`
 2. `./manage.py syncdb` (which installs a fixture and custom SQL scripts)
 3. `./manage.py runserver`
 4. open your browser and go to http://localhost:8000/
 5. Login as 'admin', password 'admin'
+
+For more details, please have a look at the [setup script for Vagrant](https://github.com/alb-i986/django-freeradmin/blob/master/setup.sh).
 
 The fixture at step 2 installs:
 - a super user 'admin', whose password is 'admin'
