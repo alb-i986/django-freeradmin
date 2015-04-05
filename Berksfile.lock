@@ -2,7 +2,7 @@ DEPENDENCIES
   apt
   git
   htop
-  mysql
+  mysql (= 5.6.1)
   python
 
 GRAPH
@@ -19,19 +19,15 @@ GRAPH
     yum-epel (>= 0.0.0)
   htop (2.0.0)
     yum-repoforge (>= 0.0.0)
-  mysql (6.0.20)
-    smf (>= 0.0.0)
+  mysql (5.6.1)
     yum-mysql-community (>= 0.0.0)
   python (1.4.6)
     build-essential (>= 0.0.0)
     yum-epel (>= 0.0.0)
-  rbac (1.0.3)
   runit (1.5.18)
     build-essential (>= 0.0.0)
     yum (~> 3.0)
     yum-epel (>= 0.0.0)
-  smf (2.2.6)
-    rbac (>= 1.0.1)
   windows (1.36.6)
     chef_handler (>= 0.0.0)
   yum (3.5.3)
